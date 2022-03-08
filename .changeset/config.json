@@ -2,12 +2,12 @@
   "$schema": "https://unpkg.com/@changesets/config@1.6.0/schema.json",
   "changelog": [
     "@changesets/changelog-github",
-    { "repo": "with-heart/chakra-formik-experiment" }
+    { "repo": "nazeeh21/chakra-ui-carousel" }
   ],
   "commit": false,
   "linked": [],
   "access": "public",
-  "baseBranch": "master",
+  "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": []
 }

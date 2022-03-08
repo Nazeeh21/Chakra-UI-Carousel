@@ -3,7 +3,7 @@ name: "Version or release"
 on:
   push:
     branches:
-      - "main"
+      - main
 
 jobs:
   change:

@@ -3,10 +3,11 @@ name: "Run checks"
 on:
   push:
     branches:
-      - "*"
+      - *
+      - main
   pull:
     branches:
-      - "main"
+      - main
 
 
 runs:

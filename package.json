@@ -29,7 +29,7 @@
     "prepare": "husky install"
   },
   "peerDependencies": {
-    "@chakra-ui/react": "^1.0.0",
+    "@chakra-ui/react": "^1.6.3",
     "formik": "^2.0.0",
     "react": "^17.0.2"
   },
@@ -42,7 +42,6 @@
     "@babel/preset-env": "^7.12.16",
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.12.16",
-    "@chakra-ui/react": "^1.6.3",
     "@changesets/changelog-github": "^0.4.0",
     "@changesets/cli": "^2.16.0",
     "@emotion/react": "^11.4.0",

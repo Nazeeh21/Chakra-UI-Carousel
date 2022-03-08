@@ -3,13 +3,14 @@ name: "Version or release"
 on:
   push:
     branches:
+      - "*"
       - main
 
 jobs:
   change:
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@master"
+      - uses: "actions/checkout@main"
 
       - name: "Get yarn cache path"
         id: "yarn-cache"
@@ -17,7 +18,7 @@ jobs:
         shell: "bash"
 
       - name: "Enable node"
-        uses: "actions/setup-node@master"
+        uses: "actions/setup-node@main"
         with:
           node-version: "14.x"
 
@@ -40,7 +41,7 @@ jobs:
 
       - name: "Changesets: version or release"
         if: ${{ github.ref == 'refs/heads/main' }}
-        uses: "changesets/action@master"
+        uses: "changesets/action@main"
         with:
           publish: "yarn release"
           commit: "ci(release): version packages"

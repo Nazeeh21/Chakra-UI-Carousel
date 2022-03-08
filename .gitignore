@@ -1,19 +1,6 @@
-.DS_STORE
+node_modules/
+dist/
 
-/dist/
-node_modules
-.rpt2_cache
-.cache
-.env*
+.eslintcache
 
-/coverage
-
-# Ignore npm/yarn debug log
-npm-debug.log
-yarn-error.log
-
-# storybook
-.out
-
-/coverage
-/test-folder
+*.log

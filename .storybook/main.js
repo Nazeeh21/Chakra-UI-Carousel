@@ -11,7 +11,7 @@ module.exports = {
       },
     },
   ],
-  stories: ['../**/*.stories.tsx'],
+  stories: ['../src/**/*.stories.tsx'],
   webpackFinal: async (config) => {
     return {
       ...config,

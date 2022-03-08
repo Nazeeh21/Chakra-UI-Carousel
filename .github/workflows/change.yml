@@ -13,7 +13,7 @@ jobs:
   change:
     runs-on: "ubuntu-latest"
     steps:
-      - uses: "actions/checkout@master"
+      - uses: "actions/checkout@main"
 
       - name: "Get yarn cache path"
         id: "yarn-cache"
@@ -21,7 +21,7 @@ jobs:
         shell: "bash"
 
       - name: "Enable node"
-        uses: "actions/setup-node@master"
+        uses: "actions/setup-node@main"
         with:
           node-version: "14.x"
 

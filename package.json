@@ -34,6 +34,9 @@
     "react": "^17.0.2"
   },
   "devDependencies": {
+    "chromatic": "^6.1.0",
+    "msw": "^0.35.0",
+    "ts-jest": "^26.4.4",
     "@babel/cli": "^7.12.16",
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",

@@ -1,8 +1,14 @@
 name: CI
 
 on:
+  pull:
+      branches:
+        - main
+        - '*'
+
   push:
     branches:
+      - '*'
       - main
 
 jobs:

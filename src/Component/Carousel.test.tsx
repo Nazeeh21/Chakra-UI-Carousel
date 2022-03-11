@@ -1,10 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import Carousel from './Carousel';
+import renderer from 'react-test-renderer';
+
 
 describe('renders correctly', () => {
   it('Carousel renders correctly', () => {
-    const { container } = render(<Carousel />);
-    expect(container).toBeInTheDocument();
+    const container = renderer.create(<Carousel />).toJSON();
+    expect(container).toMatchSnapshot();
   });
 });

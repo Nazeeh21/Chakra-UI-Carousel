@@ -40,21 +40,21 @@ jobs:
       - name: "Build"
         run: "yarn build"
 
-      - name: "Configure git user"
-        run: |
-          git config --global user.email "nazeehvahora.786@gmail.com"
-          git config --global user.name "Nazeeh21"
+      # - name: "Configure git user"
+      #   run: |
+      #     git config --global user.email "nazeehvahora.786@gmail.com"
+      #     git config --global user.name "Nazeeh21"
 
 
-      - name: "Changesets: version or release"
-        if: ${{ github.ref == 'refs/heads/main' }}
-        uses: "changesets/action@main"
-        with:
-          publish: "yarn release"
-          commit: "ci(release): version packages"
-        env:
-          NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"
-          GITHUB_TOKEN: "${{ secrets.SEMANTIC_RELEASE_TOKEN }}"
+      # - name: "Changesets: version or release"
+      #   if: ${{ github.ref == 'refs/heads/main' }}
+      #   uses: "changesets/action@main"
+      #   with:
+      #     publish: "yarn release"
+      #     commit: "ci(release): version packages"
+      #   env:
+      #     NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"
+      #     GITHUB_TOKEN: "${{ secrets.SEMANTIC_RELEASE_TOKEN }}"
   chromatic-deployment:
     runs-on: ubuntu-latest
     # Job steps

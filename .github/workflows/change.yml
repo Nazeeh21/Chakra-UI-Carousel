@@ -28,7 +28,6 @@ jobs:
         run: yarn build
   change:
     runs-on: "ubuntu-latest"
-    if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - uses: "actions/checkout@main"
 
@@ -42,9 +41,10 @@ jobs:
         run: "yarn build"
 
       - name: "Changesets: version or release"
+        if: ${{ github.ref == 'refs/heads/main' }}
         uses: "changesets/action@main"
         with:
-          publish: "yarn install && yarn build && yarn release"
+          publish: "yarn release"
           commit: "ci(release): version packages"
         env:
           NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"

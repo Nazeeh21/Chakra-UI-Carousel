@@ -40,6 +40,12 @@ jobs:
       - name: "Build"
         run: "yarn build"
 
+      - name: "Configure git user"
+        run: |
+          git config --global user.email "nazeehvahora.786@gmail.com"
+          git config --global user.name "Nazeeh21"
+
+
       - name: "Changesets: version or release"
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: "changesets/action@main"

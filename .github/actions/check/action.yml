@@ -5,11 +5,14 @@ on:
     branches:
       - '*'
       - main
+      - '*/*'
+      - '*-*'
   pull:
     branches:
       - main
       - '*'
-
+      - '*/*'
+      - '*-*'
 
 runs:
   using: "composite"

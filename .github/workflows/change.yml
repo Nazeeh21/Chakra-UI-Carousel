@@ -1,15 +1,14 @@
 name: CI
 
 on:
-  pull:
-      branches:
-        - main
-        - '*'
-
   push:
     branches:
       - '*'
       - main
+  pull:
+      branches:
+        - main
+        - '*'
 
 jobs:
   test-lint-build:

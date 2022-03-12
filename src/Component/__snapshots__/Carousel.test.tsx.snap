@@ -7,7 +7,7 @@ exports[`renders correctly Carousel renders correctly 1`] = `
   <p
     className="chakra-text css-x2jib2"
   >
-    Carousel comp
+    Carousel
   </p>
 </div>
 `;

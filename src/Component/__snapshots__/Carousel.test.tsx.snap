@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly Carousel renders correctly 1`] = `
+<div
+  className="css-13d2904"
+>
+  <p
+    className="chakra-text css-x2jib2"
+  >
+    Carousel
+  </p>
+</div>
+`;

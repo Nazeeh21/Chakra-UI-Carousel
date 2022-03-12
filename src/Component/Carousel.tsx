@@ -1,12 +1,13 @@
 import React from "react";
-import { Box, Text } from "@chakra-ui/react";
+import { Provider } from "./Provider";
 
-const Carousel = () => {
-  return (
-    <Box bg="red.300">
-      <Text size="xl" fontStyle='italic' textAlign='center'>Carousel</Text>
-    </Box>
-  );
+interface CarouselPropTypes {
+  children: React.ReactNode[];
+  gap: number;
+}
+
+const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
+  return <Provider gap={gap}>{children}</Provider>;
 };
 
 export default Carousel;

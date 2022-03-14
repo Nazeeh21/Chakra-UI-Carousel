@@ -6,9 +6,10 @@ interface ItemPropsType {
   children: React.ReactNode;
   index: number;
   gap: number;
+  positions: number[];
 }
 
-const Item: React.FC<ItemPropsType> = ({ index, gap, children }) => {
+const Item: React.FC<ItemPropsType> = ({ index, gap, children, positions }) => {
   const context = useContext(Context);
 
   const [didUserTab, setDidUserTab] = useState(false);
@@ -17,7 +18,7 @@ const Item: React.FC<ItemPropsType> = ({ index, gap, children }) => {
 
   const handleBlur = () => {
     didUserTab &&
-      index + 1 === context?.positions.length &&
+      index + 1 === positions.length &&
       context?.setTrackIsActive(false);
     setDidUserTab(false);
   };
@@ -27,7 +28,7 @@ const Item: React.FC<ItemPropsType> = ({ index, gap, children }) => {
   ) => {
     if (!context) return;
 
-    const { activeItem, positions, constraint } = context;
+    const { activeItem, constraint } = context;
     return (
       event.key === "Tab" &&
       !(activeItem === positions?.length - constraint) &&

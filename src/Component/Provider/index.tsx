@@ -1,12 +1,4 @@
-import { useMediaQuery, useTheme } from "@chakra-ui/react";
-import React, {
-  createContext,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-import Track from "../Track";
+import React, { createContext, useCallback, useMemo, useState } from "react";
 
 export interface ContextType {
   trackIsActive: boolean;
@@ -17,18 +9,19 @@ export interface ContextType {
   setActiveItem: (value: number) => void;
   constraint: number;
   initSliderWidth: (width: number) => void;
-  positions: number[];
   itemWidth: number;
+  setMultiplier: (value: number) => void;
+  setConstraint: (value: number) => void;
+  setItemWidth: (value: number) => void;
 }
 
 export const Context = createContext<ContextType | undefined>(undefined);
 
 interface ProviderProps {
-  children: React.ReactNode[];
-  gap: number;
+  children: React.ReactNode;
 }
 
-export const Provider: React.FC<ProviderProps> = ({ children, gap }) => {
+export const Provider: React.FC<ProviderProps> = ({ children }) => {
   const [trackIsActive, setTrackIsActive] = useState(false);
   const [multiplier, setMultiplier] = useState(0.35);
   const [sliderWidth, setSliderWidth] = useState(0);
@@ -41,41 +34,6 @@ export const Provider: React.FC<ProviderProps> = ({ children, gap }) => {
     []
   );
 
-  const positions = useMemo(
-    () => children?.map((_, index) => -Math.abs((itemWidth + gap) * index)),
-    [children, itemWidth, gap]
-  );
-
-  const { breakpoints } = useTheme();
-
-  const [isBetweenBaseAndMd] = useMediaQuery(
-    `(min-width: ${breakpoints?.base}) and (max-width: ${breakpoints?.md})`
-  );
-
-  const [isBetweenMdAndXl] = useMediaQuery(
-    `(min-width: ${breakpoints?.md}) and (max-width: ${breakpoints?.xl})`
-  );
-
-  const [isGreaterThanXL] = useMediaQuery(`(min-width: ${breakpoints?.xl})`);
-
-  useEffect(() => {
-    if (isBetweenBaseAndMd) {
-      setItemWidth(sliderWidth - gap);
-      setMultiplier(0.65);
-      setConstraint(1);
-    }
-    if (isBetweenMdAndXl) {
-      setItemWidth(sliderWidth / 2 - gap);
-      setMultiplier(0.5);
-      setConstraint(2);
-    }
-    if (isGreaterThanXL) {
-      setItemWidth(sliderWidth / 3 - gap);
-      setMultiplier(0.35);
-      setConstraint(3);
-    }
-  }, [isBetweenBaseAndMd, isBetweenMdAndXl, isGreaterThanXL, sliderWidth, gap]);
-
   const value = useMemo(
     () => ({
       trackIsActive,
@@ -86,8 +44,10 @@ export const Provider: React.FC<ProviderProps> = ({ children, gap }) => {
       setActiveItem,
       constraint,
       initSliderWidth,
-      positions,
       itemWidth,
+      setMultiplier,
+      setItemWidth,
+      setConstraint,
     }),
     [
       trackIsActive,
@@ -98,14 +58,12 @@ export const Provider: React.FC<ProviderProps> = ({ children, gap }) => {
       setActiveItem,
       constraint,
       initSliderWidth,
-      positions,
       itemWidth,
+      setMultiplier,
+      setItemWidth,
+      setConstraint,
     ]
   );
 
-  return (
-    <Context.Provider value={value}>
-      <Track>{children}</Track>
-    </Context.Provider>
-  );
+  return <Context.Provider value={value}>{children}</Context.Provider>;
 };

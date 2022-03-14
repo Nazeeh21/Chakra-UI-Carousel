@@ -1,1 +1,1 @@
-export * from './Component/Carousel';
+export * from './Component/Carousel/Carousel';

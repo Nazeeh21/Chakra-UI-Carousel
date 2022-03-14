@@ -1,2 +1,2 @@
-export * from './Component/Carousel/Carousel';
-export * from './Component/Provider';
+export * from './components/Carousel/Carousel';
+export * from './components/Provider';

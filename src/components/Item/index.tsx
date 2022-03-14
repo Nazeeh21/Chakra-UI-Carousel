@@ -1,16 +1,17 @@
 import { Flex } from "@chakra-ui/react";
 import React, { useContext, useState } from "react";
-import { Context } from "../Provider";
+import { Context, ContextType } from "../Provider";
 
 interface ItemPropsType {
   children: React.ReactNode;
   index: number;
   gap: number;
-  positions: number[];
 }
 
-const Item: React.FC<ItemPropsType> = ({ index, gap, children, positions }) => {
+const Item: React.FC<ItemPropsType> = ({ index, gap, children }) => {
   const context = useContext(Context);
+
+  const { positions } = context as ContextType;
 
   const [didUserTab, setDidUserTab] = useState(false);
 

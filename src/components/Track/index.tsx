@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { HStack, Flex } from "@chakra-ui/react";
+import { VStack, Flex } from "@chakra-ui/react";
 import { useAnimation, useMotionValue, motion } from "framer-motion";
 import React, {
   useCallback,
@@ -15,10 +15,9 @@ const MotionFlex = motion(Flex);
 
 interface TrackPropsType {
   children: React.ReactNode;
-  positions: number[];
 }
 
-const Track: React.FC<TrackPropsType> = ({ children, positions }) => {
+const Track: React.FC<TrackPropsType> = ({ children }) => {
   const context = useContext(Context);
 
   const {
@@ -29,6 +28,7 @@ const Track: React.FC<TrackPropsType> = ({ children, positions }) => {
     constraint,
     multiplier,
     itemWidth,
+    positions,
   } = context as ContextType;
 
   const [dragStartPosition, setDragStartPosition] = useState(0);
@@ -145,10 +145,14 @@ const Track: React.FC<TrackPropsType> = ({ children, positions }) => {
     };
   }, [handleClick, handleResize, handleKeyDown, positions]);
 
+  useEffect(() => {
+    console.log("activeItem", activeItem);
+  }, [activeItem]);
+
   return (
     <>
       {itemWidth && (
-        <HStack ref={node} spacing={5} alignItems="stretch">
+        <VStack ref={node} spacing={5} alignItems="stretch">
           <MotionFlex
             dragConstraints={node}
             onDragStart={handleDragStart}
@@ -163,7 +167,7 @@ const Track: React.FC<TrackPropsType> = ({ children, positions }) => {
           >
             {children}
           </MotionFlex>
-        </HStack>
+        </VStack>
       )}
     </>
   );

@@ -13,6 +13,8 @@ export interface ContextType {
   setMultiplier: (value: number) => void;
   setConstraint: (value: number) => void;
   setItemWidth: (value: number) => void;
+  positions: number[];
+  setPositions: (value: number[]) => void;
 }
 
 export const Context = createContext<ContextType | undefined>(undefined);
@@ -28,6 +30,7 @@ export const Provider: React.FC<ProviderProps> = ({ children }) => {
   const [activeItem, setActiveItem] = useState(0);
   const [constraint, setConstraint] = useState(0);
   const [itemWidth, setItemWidth] = useState(0);
+  const [positions, setPositions] = useState<number[]>([]);
 
   const initSliderWidth = useCallback(
     (width: number) => setSliderWidth(width),
@@ -48,6 +51,8 @@ export const Provider: React.FC<ProviderProps> = ({ children }) => {
       setMultiplier,
       setItemWidth,
       setConstraint,
+      positions,
+      setPositions
     }),
     [
       trackIsActive,
@@ -62,6 +67,8 @@ export const Provider: React.FC<ProviderProps> = ({ children }) => {
       setMultiplier,
       setItemWidth,
       setConstraint,
+      positions,
+      setPositions
     ]
   );
 

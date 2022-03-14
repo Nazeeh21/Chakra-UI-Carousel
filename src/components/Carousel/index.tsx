@@ -1,5 +1,5 @@
 import { useMediaQuery, useTheme } from "@chakra-ui/react";
-import React, { useContext, useEffect, useMemo } from "react";
+import React, { useContext, useEffect } from "react";
 import Item from "../Item";
 import { Context, ContextType } from "../Provider";
 import Track from "../Track";
@@ -12,15 +12,24 @@ export interface CarouselPropTypes {
 const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
   const context = useContext(Context);
 
-  const { setItemWidth, sliderWidth, setMultiplier, setConstraint, itemWidth } =
-    context as ContextType;
+  const {
+    setItemWidth,
+    sliderWidth,
+    setMultiplier,
+    setConstraint,
+    itemWidth,
+    setPositions,
+  } = context as ContextType;
 
   const { breakpoints } = useTheme();
 
-  const positions = useMemo(
-    () => children?.map((_, index) => -Math.abs((itemWidth + gap) * index)),
-    [children, itemWidth, gap]
-  );
+  useEffect(() => {
+    const newPositions = children?.map(
+      (_, index) => -Math.abs((itemWidth + gap) * index)
+    );
+
+    setPositions(newPositions);
+  }, [children, gap, itemWidth, setPositions]);
 
   const [isBetweenBaseAndMd] = useMediaQuery(
     `(min-width: ${breakpoints?.base}) and (max-width: ${breakpoints?.md})`
@@ -58,10 +67,11 @@ const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
     setMultiplier,
     setConstraint,
   ]);
+
   return (
-    <Track positions={positions}>
+    <Track>
       {children.map((child, index) => (
-        <Item positions={positions} gap={gap} key={index} index={index}>
+        <Item gap={gap} key={index} index={index}>
           {child}
         </Item>
       ))}

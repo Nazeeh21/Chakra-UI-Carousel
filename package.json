@@ -49,6 +49,7 @@
     "@changesets/cli": "^2.16.0",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "framer-motion": "^4.1.17",
     "@preconstruct/cli": "^2.1.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",

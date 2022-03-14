@@ -6,6 +6,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
+import Track from "../Track";
 
 export interface ContextType {
   trackIsActive: boolean;
@@ -48,14 +49,14 @@ export const Provider: React.FC<ProviderProps> = ({ children, gap }) => {
   const { breakpoints } = useTheme();
 
   const [isBetweenBaseAndMd] = useMediaQuery(
-    `(min-width: ${breakpoints.base}) and (max-width: ${breakpoints.md})`
+    `(min-width: ${breakpoints?.base}) and (max-width: ${breakpoints?.md})`
   );
 
   const [isBetweenMdAndXl] = useMediaQuery(
-    `(min-width: ${breakpoints.md}) and (max-width: ${breakpoints.xl})`
+    `(min-width: ${breakpoints?.md}) and (max-width: ${breakpoints?.xl})`
   );
 
-  const [isGreaterThanXL] = useMediaQuery(`(min-width: ${breakpoints.xl})`);
+  const [isGreaterThanXL] = useMediaQuery(`(min-width: ${breakpoints?.xl})`);
 
   useEffect(() => {
     if (isBetweenBaseAndMd) {
@@ -86,7 +87,7 @@ export const Provider: React.FC<ProviderProps> = ({ children, gap }) => {
       constraint,
       initSliderWidth,
       positions,
-      itemWidth
+      itemWidth,
     }),
     [
       trackIsActive,
@@ -98,9 +99,13 @@ export const Provider: React.FC<ProviderProps> = ({ children, gap }) => {
       constraint,
       initSliderWidth,
       positions,
-      itemWidth
+      itemWidth,
     ]
   );
 
-  return <Context.Provider value={value}>{children}</Context.Provider>;
+  return (
+    <Context.Provider value={value}>
+      <Track>{children}</Track>
+    </Context.Provider>
+  );
 };

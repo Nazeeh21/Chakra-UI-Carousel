@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import React, { useContext, useState } from "react";
-import { Context } from "../Provider";
+import { Context, ContextType } from "../Provider";
 
 interface ItemPropsType {
   children: React.ReactNode;
@@ -11,13 +11,15 @@ interface ItemPropsType {
 const Item: React.FC<ItemPropsType> = ({ index, gap, children }) => {
   const context = useContext(Context);
 
+  const { positions } = context as ContextType;
+
   const [didUserTab, setDidUserTab] = useState(false);
 
   const handleFocus = () => context?.setTrackIsActive(true);
 
   const handleBlur = () => {
     didUserTab &&
-      index + 1 === context?.positions.length &&
+      index + 1 === positions.length &&
       context?.setTrackIsActive(false);
     setDidUserTab(false);
   };
@@ -27,7 +29,7 @@ const Item: React.FC<ItemPropsType> = ({ index, gap, children }) => {
   ) => {
     if (!context) return;
 
-    const { activeItem, positions, constraint } = context;
+    const { activeItem, constraint } = context;
     return (
       event.key === "Tab" &&
       !(activeItem === positions?.length - constraint) &&

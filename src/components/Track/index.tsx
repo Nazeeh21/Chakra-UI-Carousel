@@ -137,7 +137,6 @@ const Track: React.FC<TrackPropsType> = ({ children }) => {
 
   useEffect(() => {
     handleResize();
-
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("mousedown", handleClick);
     return () => {
@@ -145,6 +144,10 @@ const Track: React.FC<TrackPropsType> = ({ children }) => {
       document.removeEventListener("mousedown", handleClick);
     };
   }, [handleClick, handleResize, handleKeyDown, positions]);
+
+  useEffect(() => {
+    console.log("activeItem", activeItem);
+  }, [activeItem]);
 
   return (
     <>

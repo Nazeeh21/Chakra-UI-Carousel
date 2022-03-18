@@ -1,3 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly Carousel renders correctly 1`] = `"0"`;
+exports[`renders correctly Carousel renders correctly 1`] = `
+<div
+  className="css-blvggq"
+>
+  <div
+    className="css-18oaxk3"
+  >
+    <p
+      className="chakra-text css-0"
+    >
+      Component 
+      1
+    </p>
+  </div>
+  <div
+    className="css-18oaxk3"
+  >
+    <p
+      className="chakra-text css-0"
+    >
+      Component 
+      2
+    </p>
+  </div>
+  <div
+    className="css-18oaxk3"
+  >
+    <p
+      className="chakra-text css-0"
+    >
+      Component 
+      3
+    </p>
+  </div>
+  <div
+    className="css-18oaxk3"
+  >
+    <p
+      className="chakra-text css-0"
+    >
+      Component 
+      4
+    </p>
+  </div>
+</div>
+`;

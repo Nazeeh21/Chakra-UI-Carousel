@@ -2,6 +2,7 @@ import { useMediaQuery, useTheme } from "@chakra-ui/react";
 import React, { useContext, useEffect } from "react";
 import Item from "../Item";
 import { Context, ContextType } from "../Provider";
+import Slider from "../Slider";
 import Track from "../Track";
 
 export interface CarouselPropTypes {
@@ -69,13 +70,15 @@ const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
   ]);
 
   return (
-    <Track>
-      {children.map((child, index) => (
-        <Item gap={gap} key={index} index={index}>
-          {child}
-        </Item>
-      ))}
-    </Track>
+    <Slider gap={gap}>
+      <Track>
+        {children.map((child, index) => (
+          <Item gap={gap} key={index} index={index}>
+            {child}
+          </Item>
+        ))}
+      </Track>
+    </Slider>
   );
 };
 

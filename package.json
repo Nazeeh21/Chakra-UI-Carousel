@@ -32,8 +32,8 @@
     "chromatic": "chromatic  --exit-zero-on-changes"
   },
   "peerDependencies": {
-    "@chakra-ui/react": "^1.0.0",
     "@chakra-ui/icons": "^1.1.7",
+    "@chakra-ui/react": "^1.0.0",
     "formik": "^2.0.0",
     "framer-motion": "^6.2.8",
     "react": "^17.0.2"
@@ -44,13 +44,12 @@
     "@babel/preset-env": "^7.12.16",
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.16.7",
-    "@chakra-ui/react": "^1.6.3",
     "@chakra-ui/icons": "^1.1.7",
+    "@chakra-ui/react": "^1.6.3",
     "@changesets/changelog-github": "^0.4.0",
     "@changesets/cli": "^2.16.0",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
-    "framer-motion": "^4.1.17",
     "@preconstruct/cli": "^2.1.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
@@ -76,6 +75,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-storybook": "^0.5.7",
     "formik": "^2.2.8",
+    "framer-motion": "^4.1.17",
     "husky": ">=6",
     "jest": "^26.6.3",
     "lint-staged": ">=10",
@@ -101,5 +101,7 @@
     ],
     "*.{yml,json,md}": "prettier --write"
   },
-  "dependencies": {}
+  "dependencies": {
+    "rooks": "^5.10.3"
+  }
 }

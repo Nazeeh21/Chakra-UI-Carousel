@@ -16,9 +16,7 @@ const RightButton = () => {
     !(activeItem === positions.length - constraint) &&
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
-      setActiveItem((prev: number) => {
-        return prev + 1;
-      });
+      setActiveItem((prev: number) => prev + 1);
   };
   return (
     <>

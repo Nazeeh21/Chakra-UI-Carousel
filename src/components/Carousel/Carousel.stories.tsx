@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from ".";
 import { Story } from "@storybook/react";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 import { Provider } from "../Provider";
 import LeftButton from "../LeftButton";
 import RightButton from "../RightButton";
@@ -26,7 +26,6 @@ export const DemoComp = ({ index }: { index: number }) => {
 
 export const Primary: Story = () => (
   <Provider>
-    <LeftButton />
     <Carousel gap={3}>
       <DemoComp index={1} />
       <DemoComp index={2} />
@@ -39,6 +38,15 @@ export const Primary: Story = () => (
       <DemoComp index={9} />
       <DemoComp index={10} />
     </Carousel>
-    <RightButton />
+    <HStack
+      display="flex"
+      marginTop="10"
+      justifyContent="center"
+      gap="48"
+      alignItems="center"
+    >
+      <LeftButton />
+      <RightButton />
+    </HStack>
   </Provider>
 );

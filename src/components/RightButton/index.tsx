@@ -1,9 +1,9 @@
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import { Button } from "@chakra-ui/react";
+import { Button, ButtonProps } from "@chakra-ui/react";
 import React, { useContext } from "react";
 import { Context, ContextType } from "../Provider";
 
-const RightButton = () => {
+const RightButton = ({ ...props }: ButtonProps) => {
   const context = useContext(Context);
 
   const { setTrackIsActive, activeItem, constraint, positions, setActiveItem } =
@@ -21,6 +21,7 @@ const RightButton = () => {
   return (
     <>
       <Button
+        {...props}
         onClick={handleIncrementClick}
         onFocus={handleFocus}
         zIndex={2}

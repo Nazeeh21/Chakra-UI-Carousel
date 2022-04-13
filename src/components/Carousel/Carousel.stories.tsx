@@ -53,10 +53,10 @@ export const DemoComp = ({ index }: { index: number }) => {
       <Flex justifyContent="space-between">
         <HStack spacing={2}>
           <Tag size="sm" variant="outline" colorScheme="green">
-            User: userId
+            User: {index}
           </Tag>
           <Tag size="sm" variant="outline" colorScheme="cyan">
-            Post: {`${index}`} clicked
+            Post: {`${index}`}
           </Tag>
         </HStack>
         <Button
@@ -75,7 +75,7 @@ export const DemoComp = ({ index }: { index: number }) => {
 
 export const Primary: Story = () => (
   <Provider>
-    <Carousel gap={10}>
+    <Carousel gap={50}>
       <DemoComp index={1} />
       <DemoComp index={2} />
       <DemoComp index={3} />

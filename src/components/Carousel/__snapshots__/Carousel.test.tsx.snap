@@ -1,3 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly Carousel renders correctly 1`] = `"0"`;
+exports[`renders correctly Carousel renders correctly 1`] = `
+Array [
+  <div
+    className="css-seh9k4"
+  >
+    0
+  </div>,
+  <span />,
+]
+`;

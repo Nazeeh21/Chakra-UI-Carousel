@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { VStack, Flex } from "@chakra-ui/react";
-import { useAnimation, useMotionValue, motion } from "framer-motion";
+import { Flex, VStack } from "@chakra-ui/react";
+import { motion, useAnimation, useMotionValue } from "framer-motion";
 import React, {
   useCallback,
   useContext,
   useEffect,
   useMemo,
   useRef,
-  useState,
+  useState
 } from "react";
 import { Context, ContextType } from "../Provider";
 
@@ -152,7 +152,7 @@ const Track: React.FC<TrackPropsType> = ({ children }) => {
   return (
     <>
       {itemWidth && (
-        <VStack ref={node} spacing={5} alignItems="stretch">
+        <VStack overflowX='hidden' ref={node} spacing={5} alignItems="stretch">
           <MotionFlex
             dragConstraints={node}
             onDragStart={handleDragStart}

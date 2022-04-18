@@ -28,7 +28,9 @@ import { Provider } from "chakra-ui-carousel";
 function Example() {
   return (
     <Box>
-      <Provider>// Carousel content</Provider>
+      <Provider>
+        // Carousel content
+      </Provider>
     </Box>
   );
 }
@@ -43,7 +45,9 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel>// Carousel content</Carousel>
+        <Carousel>
+          // Carousel content
+        </Carousel>
       </Provider>
     </Box>
   );
@@ -59,7 +63,9 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel>// Carousel content</Carousel>
+        <Carousel>
+          // Carousel content
+        </Carousel>
         <LeftButton />
         <RightButton />
       </Provider>

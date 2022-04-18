@@ -45,16 +45,15 @@ jobs:
 
       - name: "Changesets: version or release"
         if: ${{ github.ref == 'refs/heads/main' }}
-        steps: 
-          - uses: "changesets/action@main"
-          - run: |
-              cat << EOF > "$HOME/.npmrc"
-                email=nazeehvahora.786@gmail.com
-                //registry.npmjs.org/:_authToken=$NPM_TOKEN
-              EOF
+        uses: "changesets/action@main"
         with:
           publish: "yarn release"
-          # commit: "ci(release): version packages"
+          commit: "ci(release): version packages"
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            email=nazeehvahora.786@gmail.com
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
         env:
           NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"
           GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"

@@ -1,11 +1,7 @@
 import {
-  Button,
   Flex,
   Heading,
-  HStack,
-  Tag,
-  Text,
-  VStack,
+  HStack, Text
 } from "@chakra-ui/react";
 import { Story } from "@storybook/react";
 import React from "react";
@@ -38,36 +34,10 @@ export const DemoComp = ({ index }: { index: number }) => {
       flex={1}
       p={5}
     >
-      <VStack mb={6}>
-        <Heading
-          fontSize={{ base: "xl", md: "2xl" }}
-          textAlign="left"
-          w="full"
-          mb={2}
-        >
-          Title {index}
-        </Heading>
-        <Text w="full">Body {index}</Text>
-      </VStack>
-
-      <Flex justifyContent="space-between">
-        <HStack spacing={2}>
-          <Tag size="sm" variant="outline" colorScheme="green">
-            User: {index}
-          </Tag>
-          <Tag size="sm" variant="outline" colorScheme="cyan">
-            Post: {`${index}`}
-          </Tag>
-        </HStack>
-        <Button
-          onClick={() => alert(`Post ${index} clicked`)}
-          colorScheme="green"
-          fontWeight="bold"
-          color="gray.900"
-          size="sm"
-        >
-          More
-        </Button>
+      <Heading color='blue'>Title {index}</Heading>
+      <Flex justify='space-between'>
+      <Text color='green'>Body {index}</Text>
+      <Text color='gray'>user {index}</Text>
       </Flex>
     </Flex>
   );

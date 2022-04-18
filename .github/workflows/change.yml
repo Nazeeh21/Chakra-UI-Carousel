@@ -52,6 +52,7 @@ jobs:
 
       - name: "Changesets: version or release"
         if: ${{ github.ref == 'refs/heads/main' }}
+        uses: "changesets/action@main"
         with:
           publish: "yarn release"
           commit: "ci(release): version packages"

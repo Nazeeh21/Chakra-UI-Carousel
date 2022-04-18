@@ -48,7 +48,7 @@ jobs:
         uses: "changesets/action@main"
         with:
           publish: "yarn release"
-          commit: "ci(release): version packages"
+          # commit: "ci(release): version packages"
         env:
           NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"
           GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"

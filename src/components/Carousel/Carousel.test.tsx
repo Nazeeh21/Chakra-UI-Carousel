@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from ".";
+import { Carousel } from ".";
 import renderer from "react-test-renderer";
 import { DemoComp } from "./Carousel.stories";
 import { Provider } from "../Provider";

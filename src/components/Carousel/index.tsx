@@ -10,7 +10,7 @@ export interface CarouselPropTypes {
   gap: number;
 }
 
-const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
+export const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
   const context = useContext(Context);
 
   const {
@@ -81,5 +81,3 @@ const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
     </Slider>
   );
 };
-
-export default Carousel;

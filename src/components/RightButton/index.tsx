@@ -3,7 +3,7 @@ import { Button, ButtonProps } from "@chakra-ui/react";
 import React, { useContext } from "react";
 import { Context, ContextType } from "../Provider";
 
-const RightButton = ({ ...props }: ButtonProps) => {
+export const RightButton = ({ ...props }: ButtonProps) => {
   const context = useContext(Context);
 
   const { setTrackIsActive, activeItem, constraint, positions, setActiveItem } =
@@ -32,5 +32,3 @@ const RightButton = ({ ...props }: ButtonProps) => {
     </>
   );
 };
-
-export default RightButton;

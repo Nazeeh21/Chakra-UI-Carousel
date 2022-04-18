@@ -3,7 +3,7 @@ import { ChevronLeftIcon } from "@chakra-ui/icons";
 import React, { useContext } from "react";
 import { Context, ContextType } from "../Provider";
 
-const LeftButton = ({ ...props }: ButtonProps) => {
+export const LeftButton = ({ ...props }: ButtonProps) => {
   const context = useContext(Context);
 
   const { setTrackIsActive, activeItem, positions, setActiveItem } =
@@ -32,5 +32,3 @@ const LeftButton = ({ ...props }: ButtonProps) => {
     </>
   );
 };
-
-export default LeftButton;

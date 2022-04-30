@@ -35,7 +35,7 @@ jobs:
       - uses: "actions/checkout@main"
 
       - name: "Install dependencies"
-        run: "yarn install
+        run: "yarn install"
 
       - name: "Run checks"
         uses: "./.github/actions/check"

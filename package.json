@@ -1,6 +1,6 @@
 {
   "name": "chakra-ui-carousel",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "An experiment for tight-knit Chakra+Formik integration with a familiar API",
   "keywords": [
     "chakra",
@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "build": "preconstruct build",
-    "build:clean": "rimraf dist",
+    "build:clean": "rimraf dist && preconstruct build",
     "lint": "eslint ./src --ext .ts,.tsx",
     "release": "changeset publish",
     "test": "jest",
@@ -34,10 +34,11 @@
   },
   "peerDependencies": {
     "@chakra-ui/icons": "^1.1.7",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
     "@chakra-ui/react": "^1.0.0",
     "@chakra-ui/core": "^0.8.0",
-    "formik": "^2.0.0",
-    "framer-motion": "^6.2.8",
+    "framer-motion": "^6.0.0",
     "react": "^17.0.2"
   },
   "devDependencies": {
@@ -48,6 +49,9 @@
     "@babel/preset-typescript": "^7.16.7",
     "@changesets/changelog-github": "^0.4.0",
     "@changesets/cli": "^2.16.0",
+    "@chakra-ui/icons": "^1.1.7",
+    "@chakra-ui/react": "^1.0.0",
+    "@chakra-ui/core": "^0.8.0",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@preconstruct/cli": "^2.1.0",

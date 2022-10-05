@@ -1,3 +1,4 @@
+import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import { Flex, Heading, HStack, Text } from "@chakra-ui/react";
 import { Story } from "@storybook/react";
 import React from "react";
@@ -29,6 +30,7 @@ export const DemoComp = ({ index }: { index: number }) => {
       rounded={5}
       flex={1}
       p={5}
+      id={`carousel-item-${index}`}
     >
       <Heading color="blue">Title {index}</Heading>
       <Flex justify="space-between">
@@ -60,8 +62,29 @@ export const Primary: Story = () => (
       gap="48"
       alignItems="center"
     >
-      <LeftButton />
-      <RightButton />
+      <LeftButton bgColor='red.500' textColor={'whatsapp.500'} />
+      <RightButton bgColor='blue.500' />
     </HStack>
   </Provider>
 );
+
+
+export const CustomButtons: Story = () => (
+  <Provider>
+    <Carousel gap={50}>
+      <DemoComp index={1} />
+      <DemoComp index={2} />
+      <DemoComp index={3} />
+    </Carousel>
+    <HStack
+      display="flex"
+      marginTop="10"
+      justifyContent="space-between"
+      gap="48"
+      alignItems="center"
+    >
+      <LeftButton bgColor='red.500' customIcon={<ArrowLeftIcon />} textColor={'whatsapp.500'} />
+      <RightButton bgColor='blue.500' customIcon={<ArrowRightIcon />}  />
+    </HStack>
+    </Provider>
+)

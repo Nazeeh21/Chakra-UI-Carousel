@@ -1,9 +1,22 @@
-import { Button, ButtonProps } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  ButtonProps,
+  ComponentWithAs,
+  IconProps,
+} from "@chakra-ui/react";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import React, { useContext } from "react";
 import { Context, ContextType } from "../Provider";
 
-export const LeftButton = ({ ...props }: ButtonProps) => {
+interface CustomButtonProps extends ButtonProps {
+  customIcon?: ComponentWithAs<"svg", IconProps> | React.Element;
+}
+
+export const LeftButton = ({
+  customIcon,
+  ...props
+}: CustomButtonProps ) => {
   const context = useContext(Context);
 
   const { setTrackIsActive, activeItem, positions, setActiveItem } =
@@ -27,7 +40,7 @@ export const LeftButton = ({ ...props }: ButtonProps) => {
         zIndex={2}
         minW={0}
       >
-        <ChevronLeftIcon boxSize={9} />
+        {customIcon ? <Box>{customIcon}</Box> : <ChevronLeftIcon boxSize={9} />}
       </Button>
     </>
   );

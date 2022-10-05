@@ -28,9 +28,7 @@ import { Provider } from "chakra-ui-carousel";
 function Example() {
   return (
     <Box>
-      <Provider>
-        // Carousel content
-      </Provider>
+      <Provider>// Carousel content</Provider>
     </Box>
   );
 }
@@ -45,9 +43,7 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel>
-          // Carousel content
-        </Carousel>
+        <Carousel>// Carousel content</Carousel>
       </Provider>
     </Box>
   );
@@ -55,6 +51,7 @@ function Example() {
 ```
 
 3. Add `LeftButton` and `RightButton` components to your Carousel to control the current element on the Carousel. You can display these buttons anywhere around your carousel, just make sure that these buttons should be in the `Provider` Wrapper.
+   You can also pass `gap` as a props to the `Carousel` component to control the gap between the individual elements.
 
 ```tsx
 import { LeftButton, RightButton } from "chakra-ui-carousel";
@@ -63,11 +60,49 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel>
-          // Carousel content
-        </Carousel>
+        <Carousel gap={50}>// Carousel content</Carousel>
         <LeftButton />
         <RightButton />
+      </Provider>
+    </Box>
+  );
+}
+```
+
+4. You can also pass all the props that are available in the `Button` component of Chakra UI to the `LeftButton` and `RightButton` component.
+
+```tsx
+import { LeftButton, RightButton } from "chakra-ui-carousel";
+
+function Example() {
+  return (
+    <Box>
+      <Provider>
+        <Carousel gap={50}>// Carousel content</Carousel>
+        <LeftButton bgColor="red.500" textColor="white" />
+        <RightButton bgColor="blue.500" />
+      </Provider>
+    </Box>
+  );
+}
+```
+
+5. You can pass custom button components to the `LeftButton` and `RightButton` component.
+
+```tsx
+import { LeftButton, RightButton } from "chakra-ui-carousel";
+
+function Example() {
+  return (
+    <Box>
+      <Provider>
+        <Carousel gap={50}>// Carousel content</Carousel>
+        <LeftButton
+          bgColor="red.500"
+          customIcon={<ArrowLeftIcon />}
+          textColor={"white.500"}
+        />
+        <RightButton bgColor="blue.500" customIcon={<ArrowRightIcon />} />
       </Provider>
     </Box>
   );

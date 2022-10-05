@@ -88,3 +88,30 @@ export const CustomButtons: Story = () => (
     </HStack>
     </Provider>
 )
+
+export const InfiniteScroll: Story = () => (
+  <Provider>
+    <Carousel infiniteLoop gap={50}>
+      <DemoComp index={1} />
+      <DemoComp index={2} />
+      <DemoComp index={3} />
+      <DemoComp index={4} />
+      <DemoComp index={5} />
+      <DemoComp index={6} />
+      <DemoComp index={7} />
+      <DemoComp index={8} />
+      <DemoComp index={9} />
+      <DemoComp index={10} />
+    </Carousel>
+    <HStack
+      display="flex"
+      marginTop="10"
+      justifyContent="space-between"
+      gap="48"
+      alignItems="center"
+    >
+      <LeftButton bgColor='red.500' customIcon={<ArrowLeftIcon />} textColor={'whatsapp.500'} />
+      <RightButton bgColor='blue.500' customIcon={<ArrowRightIcon />}  />
+    </HStack>
+    </Provider>
+)

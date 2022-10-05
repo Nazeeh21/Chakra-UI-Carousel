@@ -8,9 +8,14 @@ import Track from "../Track";
 export interface CarouselPropTypes {
   children: React.ReactNode[];
   gap: number;
+  infiniteLoop?: boolean;
 }
 
-export const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
+export const Carousel: React.FC<CarouselPropTypes> = ({
+  children,
+  gap,
+  infiniteLoop,
+}) => {
   const context = useContext(Context);
 
   const {
@@ -20,6 +25,7 @@ export const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
     setConstraint,
     itemWidth,
     setPositions,
+    setActiveItem,
   } = context as ContextType;
 
   const { breakpoints } = useTheme();
@@ -68,6 +74,32 @@ export const Carousel: React.FC<CarouselPropTypes> = ({ children, gap }) => {
     setMultiplier,
     setConstraint,
   ]);
+
+  useEffect(() => {
+    const handleTimeOut = () =>
+      new Promise(() =>
+        setTimeout(() => {
+          setActiveItem((prev) => {
+            if (prev === children.length - 1) {
+              return 0;
+            }
+            return prev + 1;
+          });
+        }, 500)
+      );
+
+    const changeIndex = async () => {
+      while (true) {
+
+      // eslint-disable-next-line no-constant-condition
+      console.log("loop running");
+      await handleTimeOut();}
+    };
+    if (infiniteLoop) {
+        changeIndex();
+      
+    }
+  }, [infiniteLoop, setActiveItem, children.length]);
 
   return (
     <Slider gap={gap}>

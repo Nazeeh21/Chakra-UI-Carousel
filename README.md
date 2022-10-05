@@ -28,7 +28,9 @@ import { Provider } from "chakra-ui-carousel";
 function Example() {
   return (
     <Box>
-      <Provider>// Carousel content</Provider>
+      <Provider>
+      // Carousel content
+      </Provider>
     </Box>
   );
 }
@@ -43,7 +45,9 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel>// Carousel content</Carousel>
+        <Carousel>
+        // Carousel content
+        </Carousel>
       </Provider>
     </Box>
   );
@@ -60,7 +64,9 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel gap={50}>// Carousel content</Carousel>
+        <Carousel gap={50}>
+        // Carousel content
+        </Carousel>
         <LeftButton />
         <RightButton />
       </Provider>
@@ -78,7 +84,9 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel gap={50}>// Carousel content</Carousel>
+        <Carousel gap={50}>
+        // Carousel content
+        </Carousel>
         <LeftButton bgColor="red.500" textColor="white" />
         <RightButton bgColor="blue.500" />
       </Provider>
@@ -96,7 +104,9 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel gap={50}>// Carousel content</Carousel>
+        <Carousel gap={50}>
+        // Carousel content
+        </Carousel>
         <LeftButton
           bgColor="red.500"
           customIcon={<ArrowLeftIcon />}

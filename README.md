@@ -73,8 +73,6 @@ function Example() {
 }
 ```
 
-![video](https://user-images.githubusercontent.com/56908732/194335946-25d8ffe2-4ed8-46bd-b81e-8c9f52c351f0.mov?raw=true)
-
 4. You can also pass all the props that are available in the `Button` component of Chakra UI to the `LeftButton` and `RightButton` component.
 
 ```tsx
@@ -118,7 +116,5 @@ function Example() {
   );
 }
 ```
-
-![video](./public/5.mov)
 
 ### Note: If you find any issues, please open an issue on [here](https://github.com/Nazeeh21/Chakra-UI-Carousel/). Or if you want to propose a feature, feel free to open a PR.

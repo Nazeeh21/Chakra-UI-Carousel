@@ -2,9 +2,7 @@
 
 <!-- This is a carousel library built using Chakra UI and customizable using Chakra props. -->
 
-This is a Carousel library built using Chakra UI. Currently it is not much customizable by passing the Chakra props, but we are planning to add it in the furthur releases.
-
-### Note: This lib is in Beta and is not recommended to use in production. If you find any issues, please open an issue on [here](https://github.com/Nazeeh21/Chakra-UI-Carousel/). Or if you want to propose a feature, feel free to open a PR.
+This is a Carousel library built using Chakra UI. You can pass all the chakra props to the Carousel buttons as well as you can place it wherver you want inside the `<Provider>` wrapper.
 
 ## Installation
 
@@ -45,7 +43,7 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel>
+        <Carousel gap={50}>
         // Carousel content
         </Carousel>
       </Provider>
@@ -118,3 +116,5 @@ function Example() {
   );
 }
 ```
+
+### Note: If you find any issues, please open an issue on [here](https://github.com/Nazeeh21/Chakra-UI-Carousel/). Or if you want to propose a feature, feel free to open a PR.

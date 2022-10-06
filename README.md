@@ -119,6 +119,6 @@ function Example() {
 }
 ```
 
-![video](https://user-images.githubusercontent.com/56908732/194335654-9e7c19c0-dc55-4894-99ea-89d23327f9f2.mov?raw=true)
+![video](./public/5.mov)
 
 ### Note: If you find any issues, please open an issue on [here](https://github.com/Nazeeh21/Chakra-UI-Carousel/). Or if you want to propose a feature, feel free to open a PR.

@@ -7,11 +7,30 @@ This is a Carousel library built using Chakra UI. You can pass all the chakra pr
 ## Installation
 
 ```shell
-$ yarn add chakra-ui-carousel
+$ yarn add @chakra-ui/react @emotion/react @emotion/styled @chakra-ui/icons framer-motion chakra-ui-carousel
 
 # or
 
-$ npm i chakra-ui-carousel
+$ npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion chakra-ui-carousel
+```
+
+## Prerequisites
+After installing above libraries, you need to set up the ChakraProvider at the root of your application. This can be either in your `index.jsx`, `index.tsx` or `App.jsx` depending on the framework you use.
+
+```jsx
+import * as React from 'react'
+
+// 1. import `ChakraProvider` component
+import { ChakraProvider } from '@chakra-ui/react'
+
+function App() {
+  // 2. Wrap ChakraProvider at the root of your app
+  return (
+    <ChakraProvider>
+      <TheRestOfYourApplication />
+    </ChakraProvider>
+  )
+}
 ```
 
 ## Usage

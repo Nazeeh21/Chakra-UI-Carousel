@@ -65,7 +65,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install dependencies
-        run: yarn && set NODE_OPTIONS=--openssl-legacy-provider
+        run: yarn && export NODE_OPTIONS=--openssl-legacy-provider
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         with:

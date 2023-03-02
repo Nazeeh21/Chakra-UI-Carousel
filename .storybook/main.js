@@ -3,7 +3,7 @@ const path = require('path');
 const toPath = (_path) => path.join(process.cwd(), _path);
 
 module.exports = {
-  addons: [
+  addons: ['@storybook/addon-postcss',
     {
       name: '@storybook/addon-docs',
       options: {

@@ -4,6 +4,8 @@
 
 This is a Carousel library built using Chakra UI. You can pass all the chakra props to the Carousel buttons as well as you can place it wherver you want inside the `<Provider>` wrapper.
 
+You can view the demo live []here](https://carousel-example.vercel.app/)
+
 ## Installation
 
 ```shell
@@ -15,13 +17,14 @@ $ npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion chakra-ui-
 ```
 
 ## Prerequisites
+
 After installing above libraries, you need to set up the ChakraProvider at the root of your application. This can be either in your `index.jsx`, `index.tsx` or `App.jsx` depending on the framework you use.
 
 ```jsx
-import * as React from 'react'
+import * as React from "react";
 
 // 1. import `ChakraProvider` component
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
   // 2. Wrap ChakraProvider at the root of your app
@@ -29,7 +32,7 @@ function App() {
     <ChakraProvider>
       <TheRestOfYourApplication />
     </ChakraProvider>
-  )
+  );
 }
 ```
 
@@ -45,9 +48,7 @@ import { Provider } from "chakra-ui-carousel";
 function Example() {
   return (
     <Box>
-      <Provider>
-      // Carousel content
-      </Provider>
+      <Provider>// Carousel content</Provider>
     </Box>
   );
 }
@@ -62,9 +63,7 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel gap={50}>
-        // Carousel content
-        </Carousel>
+        <Carousel gap={50}>// Carousel content</Carousel>
       </Provider>
     </Box>
   );
@@ -81,9 +80,7 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel gap={50}>
-        // Carousel content
-        </Carousel>
+        <Carousel gap={50}>// Carousel content</Carousel>
         <LeftButton />
         <RightButton />
       </Provider>
@@ -101,9 +98,7 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel gap={50}>
-        // Carousel content
-        </Carousel>
+        <Carousel gap={50}>// Carousel content</Carousel>
         <LeftButton bgColor="red.500" textColor="white" />
         <RightButton bgColor="blue.500" />
       </Provider>
@@ -121,9 +116,7 @@ function Example() {
   return (
     <Box>
       <Provider>
-        <Carousel gap={50}>
-        // Carousel content
-        </Carousel>
+        <Carousel gap={50}>// Carousel content</Carousel>
         <LeftButton
           bgColor="red.500"
           customIcon={<ArrowLeftIcon />}

@@ -4,7 +4,7 @@
 
 This is a Carousel library built using Chakra UI. You can pass all the chakra props to the Carousel buttons as well as you can place it wherver you want inside the `<Provider>` wrapper.
 
-You can view the demo live []here](https://carousel-example.vercel.app/)
+You can view the demo live [here](https://carousel-example.vercel.app/)
 
 ## Installation
 
@@ -13,7 +13,7 @@ $ yarn add @chakra-ui/react @emotion/react @emotion/styled @chakra-ui/icons fram
 
 # or
 
-$ npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion chakra-ui-carousel
+$ npm i @chakra-ui/react @emotion/react @emotion/styled @chakra-ui/icons framer-motion chakra-ui-carousel
 ```
 
 ## Prerequisites
